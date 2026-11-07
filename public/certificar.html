@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiProof — Portal Público de Verificación Criptográfica</title>
+    <link rel="stylesheet" href="/css/lexi-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body style="background:#f1f5f9;">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="/" class="brand-link">
+                <div class="brand-icon-box">§</div>
+                <div>
+                    <div class="brand-title">LexiProof <span style="font-size:0.75rem; color:#059669; font-weight:700;">Verificador</span></div>
+                    <div class="brand-tagline">Auditoría Criptográfica Pública</div>
+                </div>
+            </a>
+            <div style="font-size:0.75rem; color:#475569; font-weight:600;">
+                Acceso Público • Sin Autenticación Requerida
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container" style="max-width:760px; margin:36px auto;">
+        <!-- Loader -->
+        <div id="certLoading" class="card" style="text-align:center; padding:50px;">
+            <div class="streaming-indicator">
+                <div class="pulsing-dot"></div>
+                <span style="font-size:1.1rem;">Verificando Hash Criptográfico en el Libro Mayor...</span>
+            </div>
+        </div>
+
+        <!-- Tarjeta de Verificación Válida -->
+        <div id="certValidCard" class="card" style="display:none; border-top:6px solid #059669; padding:32px;">
+            <div style="text-align:center; margin-bottom:24px;">
+                <div style="font-size:3.5rem; margin-bottom:8px;">🛡️</div>
+                <div class="badge badge-certified" style="font-size:0.9rem; padding:6px 16px;">
+                    DOCUMENTO AUTÉNTICO Y CERTIFICADO
+                </div>
+                <h1 style="font-size:1.6rem; font-weight:900; color:#0f172a; margin-top:12px;" id="certTitulo">Cargando título...</h1>
+                <p style="font-size:0.85rem; color:#64748b; margin-top:4px;">
+                    Certificado bajo los preceptos de la <strong>Ley 527 de 1999</strong> y <strong>Decreto 2364 de 2012</strong> de la República de Colombia.
+                </p>
+            </div>
+
+            <!-- Caja de Hash SHA-256 -->
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px; margin-bottom:24px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <span style="font-size:0.75rem; font-weight:700; color:#0f172a; text-transform:uppercase; letter-spacing:0.5px;">Hash Criptográfico SHA-256 (256 bits)</span>
+                    <span class="badge badge-certified" style="font-size:0.7rem;">COTEJO 100% ÍNTEGRO</span>
+                </div>
+                <div id="certHashSha256" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:'Courier New', monospace; font-size:0.82rem; color:#0f172a; word-break:break-all;">
+                    Cargando hash...
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:0.78rem; color:#64748b;">
+                    <span>UUID Público: <strong id="certUuid" style="font-family:monospace; color:#2563eb;"></strong></span>
+                    <span>Fecha Emisión: <strong id="certFechaUtc"></strong></span>
+                </div>
+            </div>
+
+            <!-- Firmantes Certificados -->
+            <div style="margin-bottom:24px;">
+                <h3 style="font-size:1rem; font-weight:800; color:#0f172a; margin-bottom:12px;">Partes Firmantes & Evidencias Biométricas:</h3>
+                <div id="certFirmantesList">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+
+            <!-- Resumen Ejecutivo de la IA -->
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px; margin-bottom:24px;">
+                <h3 style="font-size:0.95rem; font-weight:800; color:#0f172a; margin-bottom:12px;">📋 Resumen Ejecutivo & Compromisos del Contrato:</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div>
+                        <strong style="font-size:0.8rem; color:#0f172a;">Compromisos Económicos:</strong>
+                        <ul id="certCompromisos" style="font-size:0.78rem; color:#475569; padding-left:16px; margin-top:4px; line-height:1.4;"></ul>
+                    </div>
+                    <div>
+                        <strong style="font-size:0.8rem; color:#0f172a;">Riesgos e Incumplimiento:</strong>
+                        <ul id="certRiesgos" style="font-size:0.78rem; color:#475569; padding-left:16px; margin-top:4px; line-height:1.4;"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div style="text-align:center;">
+                <a id="btnDescargarOriginalPdf" href="#" target="_blank" class="btn-primary" style="padding:12px 24px; font-size:0.95rem;">
+                    📄 Descargar Documento Original Completo
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta de Verificación Inválida / Alterada -->
+        <div id="certInvalidCard" class="card" style="display:none; border-top:6px solid #e11d48; padding:40px; text-align:center;">
+            <div style="font-size:4rem; margin-bottom:12px;">🚨</div>
+            <div class="badge badge-alert" style="font-size:0.95rem; padding:8px 18px; margin-bottom:16px;">
+                DOCUMENTO NO VÁLIDO O MANIPULADO
+            </div>
+            <h2 style="font-size:1.5rem; font-weight:900; color:#9f1239; margin-bottom:8px;">Alerta de Seguridad Criptográfica</h2>
+            <p id="invalidReason" style="font-size:0.92rem; color:#475569; max-width:520px; margin:0 auto 24px auto;">
+                El código de verificación presentado no fue encontrado o la integridad del documento ha sido vulnerada.
+            </p>
+            <a href="/" class="btn-secondary">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer" style="background:#ffffff; margin-top:40px;">
+        <div class="footer-inner">
+            <div>
+                <strong>LexiProof LegalTech</strong> • Criptografía y Mensajes de Datos
+            </div>
+            <div>
+                Ley 527 de 1999 • No Repudio Criptográfico SHA-256
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/cert_verifier.js"></script>
+</body>
+</html>

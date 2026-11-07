@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consola en Vivo — Bot de WhatsApp LexiProof LegalTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --wa-green-header: #008069;
+            --wa-green-primary: #25d366;
+            --wa-chat-bg: #efeae2;
+            --wa-bubble-out: #d9fdd3;
+            --wa-bubble-in: #ffffff;
+            --wa-dark-bg: #111b21;
+            --wa-dark-panel: #202c33;
+            --wa-text-primary: #111b21;
+            --wa-text-secondary: #667781;
+            --wa-blue-check: #53bdeb;
+            --primary: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Top Executive Bar */
+        .exec-header {
+            background: #1e293b;
+            border-bottom: 1px solid #334155;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 20;
+        }
+
+        .exec-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .badge-verified {
+            background: #059669;
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .exec-nav-btn {
+            background: #334155;
+            color: #e2e8f0;
+            border: 1px solid #475569;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .exec-nav-btn:hover {
+            background: #475569;
+            color: #fff;
+        }
+
+        .exec-nav-btn.primary {
+            background: #008069;
+            border-color: #059669;
+            color: #fff;
+        }
+
+        .exec-nav-btn.primary:hover {
+            background: #059669;
+        }
+
+        /* Main WhatsApp Layout Container */
+        .main-layout {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 57px);
+            overflow: hidden;
+        }
+
+        /* Left Sidebar: Contacts & Stats */
+        .sidebar {
+            width: 360px;
+            background: #1e293b;
+            border-right: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 14px 16px;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bot-avatar-large {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #008069, #25d366);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .stats-ribbon {
+            background: #111827;
+            padding: 12px 16px;
+            border-bottom: 1px solid #334155;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .stat-card-mini {
+            background: #1f2937;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #374151;
+        }
+
+        .stat-card-mini .lbl {
+            font-size: 0.68rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .stat-card-mini .val {
+            font-size: 0.95rem;
+            color: #38bdf8;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .chat-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .chat-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .chat-item:hover, .chat-item.active {
+            background: #334155;
+        }
+
+        .chat-item-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        .chat-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .chat-item-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f8fafc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-item-time {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        .chat-item-snippet {
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 2px;
+        }
+
+        /* Right Chat Pane: WhatsApp Window */
+        .chat-pane {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #0b141a;
+            position: relative;
+        }
+
+        .chat-pane-header {
+            background: #202c33;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #2a3942;
+            z-index: 10;
+        }
+
+        .chat-pane-contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e9edef;
+        }
+
+        .contact-status {
+            font-size: 0.72rem;
+            color: #25d366;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background: #25d366;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .action-triggers-top {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-simulate {
+            background: #111b21;
+            border: 1px solid #008069;
+            color: #25d366;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-simulate:hover {
+            background: #008069;
+            color: #fff;
+        }
+
+        /* Chat Messages Scrollable Feed */
+        .chat-feed {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background-color: #0b141a;
+            background-image: radial-gradient(#1f2c34 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .msg-bubble {
+            max-width: 65%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            position: relative;
+            word-wrap: break-word;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+        }
+
+        .msg-bubble.incoming {
+            align-self: flex-start;
+            background: #202c33;
+            color: #e9edef;
+            border-top-left-radius: 0;
+        }
+
+        .msg-bubble.outgoing {
+            align-self: flex-end;
+            background: #005c4b;
+            color: #e9edef;
+            border-top-right-radius: 0;
+        }
+
+        .msg-author {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #25d366;
+            margin-bottom: 4px;
+        }
+
+        .msg-text {
+            white-space: pre-wrap;
+        }
+
+        .msg-meta {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 4px;
+            margin-top: 6px;
+            font-size: 0.68rem;
+            color: #8696a0;
+        }
+
+        .check-read {
+            color: #53bdeb;
+            font-weight: 700;
+        }
+
+        .bubble-card {
+            background: rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 8px;
+        }
+
+        .bubble-btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .bubble-btn {
+            background: #202c33;
+            color: #38bdf8;
+            border: 1px solid #374151;
+            padding: 7px 10px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: background 0.15s;
+        }
+
+        .bubble-btn:hover {
+            background: #374151;
+            color: #fff;
+        }
+
+        /* Bottom Input Bar */
+        .chat-input-bar {
+            background: #202c33;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid #2a3942;
+        }
+
+        .input-text {
+            flex: 1;
+            background: #2a3942;
+            border: none;
+            color: #e9edef;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .input-text::placeholder {
+            color: #8696a0;
+        }
+
+        .btn-send {
+            background: #00a884;
+            color: #fff;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+
+        .btn-send:hover {
+            background: #008069;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Ejecutivo de Navegación -->
+    <header class="exec-header">
+        <div class="exec-title-group">
+            <div class="bot-avatar-large">🤖</div>
+            <div>
+                <h1 style="font-size: 1.05rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+                    LexiProof WhatsApp Legal Bot 
+                    <span class="badge-verified">✓ Bot Verificado 24/7</span>
+                </h1>
+                <p style="font-size: 0.75rem; color: #94a3b8;">Despachador Autónomo & Firma Remota Criptográfica (Ley 527 de 1999)</p>
+            </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <a href="/dashboard" class="exec-nav-btn">📊 Vistas Analíticas (Looks)</a>
+            <a href="/crear" class="exec-nav-btn">✍️ Wizard Manual</a>
+            <button onclick="enviarNuevoContratoPrompt()" class="exec-nav-btn primary">🚀 Despachar Nuevo Contrato</button>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Panel Izquierdo: Lista de Chats y Métricas -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div style="font-weight: 600; font-size: 0.88rem; color: #e2e8f0;">Líneas & Interacciones Activas</div>
+                <button onclick="cargarHistorial()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.8rem;" title="Refrescar">🔄</button>
+            </div>
+
+            <!-- Métricas del Bot -->
+            <div class="stats-ribbon">
+                <div class="stat-card-mini">
+                    <div class="lbl">SLA Entrega</div>
+                    <div class="val" id="metricSla">100% Inmediato</div>
+                </div>
+                <div class="stat-card-mini">
+                    <div class="lbl">Firmas WhatsApp</div>
+                    <div class="val" id="metricFirmas" style="color: #34d399;">0</div>
+                </div>
+                <div class="stat-card-mini">
+                    <div class="lbl">Contratos Enviados</div>
+                    <div class="val" id="metricDespachos">0</div>
+                </div>
+                <div class="stat-card-mini">
+                    <div class="lbl">Canal Activo</div>
+                    <div class="val" style="font-size: 0.75rem; color: #a7f3d0;" id="metricGateway">Gateway Autónomo</div>
+                </div>
+            </div>
+
+            <!-- Lista de Contactos Dinámica -->
+            <div class="chat-list" id="chatList">
+                <div style="padding: 20px; text-align: center; color: #94a3b8; font-size: 0.8rem;">
+                    Cargando líneas y contactos activos...
+                </div>
+            </div>
+        </aside>
+
+        <!-- Panel Derecho: Conversación en Vivo -->
+        <main class="chat-pane">
+            <div class="chat-pane-header">
+                <div class="chat-pane-contact">
+                    <div class="chat-item-avatar" id="activeAvatar" style="width: 38px; height: 38px; font-size: 0.85rem;">LM</div>
+                    <div>
+                        <div class="contact-name" id="activeContactName">Laura Mendoza (Contratista)</div>
+                        <div class="contact-status">
+                            <span class="status-dot"></span>
+                            <span id="activeContactPhone">+57 300 123 4567</span> • En línea
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción Rápida para el Video / Demostración -->
+                <div class="action-triggers-top">
+                    <a id="btnAbrirWaMeHeader" href="#" target="_blank" class="btn-simulate" style="background: #059669; color: #fff; border-color: #059669; text-decoration: none; display: flex; align-items: center; gap: 4px;">📲 Enviar a WhatsApp Real</a>
+                    <button class="btn-simulate" onclick="simularRespuestaUsuario('FIRMAR')">✍️ Simular: "FIRMAR"</button>
+                    <button class="btn-simulate" onclick="simularRespuestaUsuario('ESTADO')">📊 Simular: "ESTADO"</button>
+                    <button class="btn-simulate" onclick="simularRespuestaUsuario('PDF')">📄 Simular: "PDF"</button>
+                </div>
+            </div>
+
+            <!-- Feed de Mensajes -->
+            <div class="chat-feed" id="chatFeed">
+                <!-- Se inyectan dinámicamente -->
+            </div>
+
+            <!-- Barra Inferior de Entrada -->
+            <div class="chat-input-bar">
+                <input type="text" id="inputChat" class="input-text" placeholder="Escribe un mensaje para responder al bot (ej: FIRMAR, ESTADO, etc.)..." onkeydown="if(event.key==='Enter') enviarMensajeUsuario()">
+                <button class="btn-send" onclick="enviarMensajeUsuario()" title="Enviar Mensaje">➤</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let currentPhone = '573001234567';
+        let currentName = 'Laura Mendoza';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarContactos();
+            cargarHistorial();
+            cargarMetricas();
+            setInterval(cargarContactos, 4000);
+            setInterval(cargarHistorial, 4000);
+            setInterval(cargarMetricas, 10000);
+        });
+
+        async function cargarContactos() {
+            try {
+                const res = await fetch('/api/whatsapp/bot/contacts');
+                const data = await res.json();
+                if (data.ok && Array.isArray(data.contacts)) {
+                    renderizarContactos(data.contacts);
+                }
+            } catch (e) {
+                console.error('Error cargando contactos:', e);
+            }
+        }
+
+        function renderizarContactos(contacts) {
+            const listEl = document.getElementById('chatList');
+            if (!listEl) return;
+
+            if (!contacts || contacts.length === 0) {
+                listEl.innerHTML = '<div style="padding: 20px; text-align: center; color: #94a3b8; font-size: 0.8rem;">No hay contactos activos.</div>';
+                return;
+            }
+
+            let html = '';
+            contacts.forEach(c => {
+                const isActive = c.telefono === currentPhone;
+                const iniciales = (c.nombre || 'WA')
+                    .replace(/[\(\)]/g, '')
+                    .split(' ')
+                    .filter(w => w.length > 0)
+                    .map(w => w[0])
+                    .slice(0, 2)
+                    .join('')
+                    .toUpperCase() || 'WA';
+
+                let timeStr = 'Ahora';
+                if (c.hora) {
+                    const d = new Date(c.hora);
+                    timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }
+
+                // Generar color de avatar determinista
+                const hue = Math.abs(c.telefono.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0) * 53) % 360;
+                const bgAvatar = `hsl(${hue}, 65%, 32%)`;
+
+                html += `
+                    <div class="chat-item ${isActive ? 'active' : ''}" onclick="seleccionarChat('${c.telefono}', '${escapeHtml(c.nombre)}')">
+                        <div class="chat-item-avatar" style="background: ${bgAvatar};">${iniciales}</div>
+                        <div class="chat-item-info">
+                            <div class="chat-item-name">
+                                <span>${escapeHtml(c.nombre)}</span>
+                                <span class="chat-item-time">${timeStr}</span>
+                            </div>
+                            <div class="chat-item-snippet">+${c.telefono} • ${escapeHtml(c.ultimo_contrato || 'Contrato Legal')}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            listEl.innerHTML = html;
+        }
+
+        function seleccionarChat(phone, name) {
+            currentPhone = phone;
+            currentName = name;
+            document.getElementById('activeContactName').textContent = name;
+            document.getElementById('activeContactPhone').textContent = '+' + phone;
+            document.getElementById('activeAvatar').textContent = (name || 'WA').replace(/[\(\)]/g, '').split(' ').filter(w => w.length > 0).map(w => w[0]).slice(0, 2).join('').toUpperCase() || 'WA';
+            
+            document.querySelectorAll('.chat-item').forEach(el => el.classList.remove('active'));
+            if (event && event.currentTarget) event.currentTarget.classList.add('active');
+
+            const headerBtn = document.getElementById('btnAbrirWaMeHeader');
+            if (headerBtn) headerBtn.href = `https://wa.me/${phone}`;
+
+            cargarHistorial();
+        }
+
+        async function cargarMetricas() {
+            try {
+                const res = await fetch('/api/whatsapp/bot/stats');
+                const data = await res.json();
+                if (data.ok && data.stats) {
+                    const s = data.stats;
+                    document.getElementById('metricSla').textContent = s.tasa_entrega || '100%';
+                    document.getElementById('metricFirmas').textContent = s.firmas_via_whatsapp || 0;
+                    document.getElementById('metricDespachos').textContent = s.contratos_despachados || 0;
+                    if (s.meta_api_status) {
+                        document.getElementById('metricGateway').textContent = s.meta_api_status;
+                    }
+                }
+            } catch (e) {
+                console.error('Error cargando métricas:', e);
+            }
+        }
+
+        async function cargarHistorial() {
+            try {
+                const res = await fetch(`/api/whatsapp/bot/messages?telefono=${currentPhone}`);
+                const data = await res.json();
+                if (data.ok) {
+                    renderizarMensajes(data.messages);
+                }
+            } catch (e) {
+                console.error('Error cargando historial:', e);
+            }
+        }
+
+        function renderizarMensajes(messages) {
+            const feed = document.getElementById('chatFeed');
+            feed.innerHTML = '';
+
+            if (!messages || messages.length === 0) {
+                feed.innerHTML = `
+                    <div style="align-self: center; background: #1e293b; border: 1px dashed #475569; padding: 20px 30px; border-radius: 8px; text-align: center; max-width: 450px;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🤖 📲</div>
+                        <h4 style="color: #f8fafc; margin-bottom: 6px;">Consola de WhatsApp Lista</h4>
+                        <p style="font-size: 0.8rem; color: #94a3b8; line-height: 1.4;">
+                            Aún no se han enviado mensajes a esta línea. Puedes hacer clic en 
+                            <strong style="color: #38bdf8;">"Despachar Nuevo Contrato"</strong> arriba o escribir al Copiloto para que el bot lo despache automáticamente.
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            messages.forEach(msg => {
+                const isOut = msg.direccion === 'saliente';
+                const bubble = document.createElement('div');
+                bubble.className = `msg-bubble ${isOut ? 'outgoing' : 'incoming'}`;
+
+                const hora = msg.fecha_envio ? new Date(msg.fecha_envio).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'Ahora';
+
+                let formattedText = escapeHtml(msg.texto)
+                    .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+                    .replace(/_(.*?)_/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code style="background: rgba(0,0,0,0.3); padding: 1px 4px; border-radius: 3px;">$1</code>');
+
+                // Si es un mensaje de contrato con enlace, agregar botones interactivos
+                let botonesHtml = '';
+                if (msg.contrato_uuid || msg.contrato_id) {
+                    const uuid = msg.contrato_uuid || msg.contrato_id;
+                    const waMeUrl = msg.enlace_directo_web || `https://wa.me/${msg.para}?text=${encodeURIComponent(msg.texto)}`;
+                    botonesHtml = `
+                        <div class="bubble-card">
+                            <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 4px;">Acciones Rápidas del Instrumento:</div>
+                            <div class="bubble-btn-group">
+                                <a href="${waMeUrl}" target="_blank" class="bubble-btn" style="background:#059669; color:#fff; font-weight:700;">📲 Enviar a este número en WhatsApp Real (1 clic)</a>
+                                <a href="/certificar/${uuid}" target="_blank" class="bubble-btn">✍️ Abrir Portal y Firmar Digitalmente</a>
+                                <a href="/generated_pdfs/contrato_${uuid}.pdf" target="_blank" class="bubble-btn">📄 Descargar PDF Oficial SHA-256</a>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                bubble.innerHTML = `
+                    <div class="msg-author">${isOut ? '🤖 Bot LexiProof LegalTech' : escapeHtml(msg.nombre_destinatario || currentName)}</div>
+                    <div class="msg-text">${formattedText}</div>
+                    ${botonesHtml}
+                    <div class="msg-meta">
+                        <span>${hora}</span>
+                        ${isOut ? '<span class="check-read">✓✓</span>' : ''}
+                    </div>
+                `;
+
+                feed.appendChild(bubble);
+            });
+
+            feed.scrollTop = feed.scrollHeight;
+        }
+
+        async function enviarMensajeUsuario() {
+            const input = document.getElementById('inputChat');
+            const txt = input.value.trim();
+            if (!txt) return;
+
+            input.value = '';
+
+            try {
+                const res = await fetch('/api/whatsapp/bot/incoming', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        from: currentPhone,
+                        text: txt,
+                        pushName: currentName
+                    })
+                });
+                const data = await res.json();
+                if (data.ok) {
+                    cargarHistorial();
+                    cargarMetricas();
+                }
+            } catch (e) {
+                alert('Error al enviar mensaje: ' + e.message);
+            }
+        }
+
+        async function simularRespuestaUsuario(keyword) {
+            document.getElementById('inputChat').value = keyword;
+            enviarMensajeUsuario();
+        }
+
+        async function enviarNuevoContratoPrompt() {
+            const telefono = prompt('Ingresa el número de WhatsApp para el despacho automático:', currentPhone);
+            if (!telefono) return;
+
+            try {
+                const res = await fetch('/api/whatsapp/bot/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        telefono: telefono,
+                        nombre: currentName
+                    })
+                });
+                const data = await res.json();
+                if (data.ok) {
+                    alert('✅ ¡Contrato despachado exitosamente por el Bot de WhatsApp a +' + data.telefono + '!');
+                    cargarHistorial();
+                    cargarMetricas();
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo despachar el contrato'));
+                }
+            } catch (e) {
+                alert('Error en la llamada: ' + e.message);
+            }
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+    </script>
+</body>
+</html>

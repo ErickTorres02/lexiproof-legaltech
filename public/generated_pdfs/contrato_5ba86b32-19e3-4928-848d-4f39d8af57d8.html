@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Arrendamiento Apartamento 402 - Edificio los Rosales — LexiProof Certificado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 22mm 20mm 25mm 20mm;
+            @top-center {
+                content: "REPÚBLICA DE COLOMBIA • CERTIFICACIÓN DE MENSAJES DE DATOS — LEY 527 DE 1999";
+                font-family: 'Inter', sans-serif;
+                font-size: 7pt;
+                font-weight: 700;
+                color: #475569;
+                letter-spacing: 1px;
+                border-bottom: 1px solid #e2e8f0;
+                padding-bottom: 4px;
+            }
+            @bottom-left {
+                content: "Certificado Inmutable LexiProof # 5ba86b32-19e";
+                font-family: 'Inter', sans-serif;
+                font-size: 7pt;
+                color: #64748b;
+            }
+            @bottom-right {
+                content: "Página " counter(page) " de " counter(pages);
+                font-family: 'Inter', sans-serif;
+                font-size: 7pt;
+                color: #64748b;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Merriweather', 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.75;
+            color: #0f172a;
+            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .document-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            position: relative;
+        }
+
+        /* Membrete Notarial / Oficial */
+        .header-membrete {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 16px;
+            margin-bottom: 28px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .brand-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-shield {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 900;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+            border: 1px solid #334155;
+        }
+
+        .brand-title-text {
+            font-size: 16pt;
+            font-weight: 900;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .brand-subtitle-text {
+            font-size: 7.5pt;
+            color: #475569;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sello-oficial-box {
+            text-align: right;
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            padding: 8px 14px;
+            border-radius: 8px;
+        }
+
+        .sello-status-text {
+            font-size: 8.5pt;
+            font-weight: 800;
+            color: #15803d;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 6px;
+        }
+
+        .sello-sub-text {
+            font-size: 7pt;
+            color: #166534;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Estructura Legal del Contrato */
+        .legal-main-title {
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            font-size: 14pt;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            line-height: 1.4;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        .legal-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11.5pt;
+            font-weight: 800;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legal-clause-container {
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .legal-clause-header {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .clause-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 7pt;
+            font-weight: 800;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .legal-clause-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5pt;
+            font-weight: 800;
+            color: #0f172a;
+            display: inline;
+        }
+
+        .legal-paragraph {
+            text-align: justify;
+            text-justify: inter-word;
+            margin-bottom: 14px;
+            text-indent: 20px;
+            font-size: 10.5pt;
+            color: #1e293b;
+        }
+
+        .legal-bold {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .legal-separator {
+            text-align: center;
+            margin: 24px 0;
+            position: relative;
+        }
+        .legal-separator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #cbd5e1;
+            z-index: 1;
+        }
+        .legal-separator span {
+            background: #ffffff;
+            position: relative;
+            z-index: 2;
+            padding: 0 12px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .legal-list-item {
+            margin-left: 28px;
+            margin-bottom: 6px;
+            font-size: 10pt;
+            text-align: justify;
+        }
+
+        /* Sección de Firmas */
+        .seccion-firmas-bloque {
+            margin-top: 36px;
+            page-break-inside: avoid;
+        }
+
+        .firmas-titulo-principal {
+            font-family: 'Inter', sans-serif;
+            font-size: 9.5pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            color: #334155;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+        }
+
+        .firmas-grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .firma-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 14px;
+            position: relative;
+        }
+
+        .firma-header-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 7pt;
+            font-weight: 800;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .firma-canvas-box {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px dashed #cbd5e1;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            padding: 4px;
+        }
+
+        .firma-trazo-img {
+            max-height: 72px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .firma-digital-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #047857;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .firma-divider {
+            height: 1px;
+            background: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .firma-nombre-titular {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 10pt;
+            color: #0f172a;
+        }
+
+        .firma-identificacion {
+            font-family: 'Inter', sans-serif;
+            font-size: 8.5pt;
+            color: #334155;
+            margin-top: 2px;
+        }
+
+        .firma-metadata-row {
+            font-family: 'Inter', sans-serif;
+            font-size: 7pt;
+            color: #64748b;
+            margin-top: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .firma-hash-stamp {
+            font-family: 'Courier New', monospace;
+            font-size: 6.5pt;
+            color: #047857;
+            background: #ecfdf5;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-top: 6px;
+            border: 1px solid #a7f3d0;
+            word-break: break-all;
+        }
+
+        /* Pie de Certificación Criptográfica */
+        .footer-cripto-box {
+            margin-top: 32px;
+            border-top: 2px dashed #94a3b8;
+            padding-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            page-break-inside: avoid;
+        }
+
+        .footer-cripto-info {
+            flex: 1;
+        }
+
+        .footer-cripto-title {
+            font-size: 9.5pt;
+            font-weight: 800;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-cripto-desc {
+            font-size: 7.5pt;
+            color: #475569;
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+
+        .hash-sha256-display {
+            background: #ffffff;
+            border: 1px solid #94a3b8;
+            border-radius: 5px;
+            padding: 6px 10px;
+            margin-top: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 8pt;
+            font-weight: 700;
+            color: #0f172a;
+            word-break: break-all;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-meta-line {
+            font-size: 7pt;
+            color: #64748b;
+            margin-top: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-qr-container {
+            width: 105px;
+            text-align: center;
+        }
+
+        .footer-qr-caption {
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: #475569;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body { background: none; }
+            .document-wrapper { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="document-wrapper">
+        <!-- Membrete Notarial -->
+        <div class="header-membrete">
+            <div class="brand-block">
+                <div class="brand-shield">§</div>
+                <div>
+                    <div class="brand-title-text">LexiProof</div>
+                    <div class="brand-subtitle-text">Certificación Jurídica Inmutable • Ley 527 de 1999</div>
+                </div>
+            </div>
+            <div class="sello-oficial-box">
+                <div class="sello-status-text">
+                    <span>🛡️</span> CERTIFICADO DIGITAL ÍNTEGRO
+                </div>
+                <div class="sello-sub-text">
+                    Validez Probatoria y No Repudio • Art. 6, 7 y 8
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuerpo del Contrato -->
+        <div class="cuerpo-contractual">
+            <h1 class="legal-main-title">CONTRATO DE ARRENDAMIENTO DE INMUEBLE (VIVIENDA / COMERCIAL)</h1>
+<p class="legal-paragraph">Entre los suscritos: Por una parte, <strong class="legal-bold">Maria Fernanda Gomez Restrepo</strong>, identificado con documento N° <strong class="legal-bold">52.890.123</strong>, quien en adelante se denominará <strong class="legal-bold">EL ARRENDADOR</strong>; y por la otra parte, <strong class="legal-bold">Andres Felipe Valencia Castro</strong>, identificado con documento N° <strong class="legal-bold">1.018.456.789</strong>, quien en adelante se denominará <strong class="legal-bold">EL ARRENDATARIO</strong>, hemos convenido celebrar el presente <strong class="legal-bold">CONTRATO DE ARRENDAMIENTO</strong>, regido por la Ley 820 de 2003 y el Código Civil colombiano:</p>
+<div class="legal-separator"><span>⚖️</span></div>
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA PRIMERA. — OBJETO DEL CONTRATO</h3></div></div>
+<strong class="legal-bold">EL ARRENDADOR</strong> entrega a título de arrendamiento a <strong class="legal-bold">EL ARRENDATARIO</strong>, y este recibe en tal concepto, el inmueble ubicado en la ciudad de <strong class="legal-bold">Bogotá D.C., Colombia</strong>, destinado exclusivamente para <strong class="legal-bold">Contrato de Arrendamiento Apartamento 402 - Edificio los Rosales</strong>.
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA SEGUNDA. — CANON DE ARRENDAMIENTO</h3></div></div>
+El precio o canon mensual de arrendamiento convenido es la suma de <strong class="legal-bold">$2.300.000</strong>, que <strong class="legal-bold">EL ARRENDATARIO</strong> se obliga a pagar dentro de los primeros cinco (5) días hábiles de cada período mensual.
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA TERCERA. — TÉRMINO Y PRÓRROGA</h3></div></div>
+El término de duración del arrendamiento será de <strong class="legal-bold">12 Meses </strong>, contados a partir del <strong class="legal-bold">3 de octubre de 2026</strong>. Vencido el plazo inicial, se prorrogará automáticamente por períodos iguales si ninguna de las partes manifiesta lo contrario por escrito con 3 meses de antelación.
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA CUARTA. — SERVICIOS PÚBLICOS Y CUOTAS</h3></div></div>
+Los servicios públicos domiciliarios (agua, energía, gas, internet) serán sufragados oportunamente y en su totalidad por <strong class="legal-bold">EL ARRENDATARIO</strong> durante la vigencia del contrato hasta la restitución física del inmueble.
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA QUINTA. — CLÁUSULA PENAL PECUNIARIA</h3></div></div>
+El incumplimiento de cualquiera de las obligaciones contraídas en el presente contrato dará derecho a la parte cumplida a exigir a título de pena una suma equivalente a <strong class="legal-bold">dos (2) cánones mensuales de arrendamiento</strong>, sin perjuicio de la restitución del inmueble y los intereses moratorios a la tasa máxima legal certificada por la Superintendencia Financiera de Colombia.
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA SEXTA. — MÉRITO EJECUTIVO Y RENUNCIA A REQUERIMIENTOS</h3></div></div>
+El presente contrato presta <strong class="legal-bold">MÉRITO EJECUTIVO</strong> de conformidad con el Artículo 422 del C.G.P. para el cobro judicial de cánones, cláusula penal, servicios públicos e intereses. <strong class="legal-bold">EL ARRENDATARIO</strong> renuncia expresamente a todos los requerimientos de que tratan los Artículos 2007 del Código Civil y 424 del C.G.P. para ser constituido en mora.
+<div class="legal-clause-container"><div class="legal-clause-header"><span class="clause-badge">CLÁUSULA</span><h3 class="legal-clause-title">CLÁUSULA SÉPTIMA. — FIRMA ELECTRÓNICA Y VALOR PROBATORIO (LEY 527 DE 1999)</h3></div></div>
+Las partes suscriben este contrato electrónicamente bajo los preceptos de la <strong class="legal-bold">Ley 527 de 1999</strong> y el <strong class="legal-bold">Decreto 2364 de 2012</strong>, otorgando a las firmas digitales capturadas, estampas de tiempo y Hash criptográfico SHA-256 la condición de plena autenticidad, integridad y no repudio.
+<div class="legal-separator"><span>⚖️</span></div>
+<p class="legal-paragraph">Suscrito en <strong class="legal-bold">Bogotá D.C., Colombia</strong>, el día <strong class="legal-bold">3 de octubre de 2026</strong>.</p>
+<p class="legal-paragraph"><strong class="legal-bold">EL ARRENDADOR:</strong>  <br/>Nombre: Maria Fernanda Gomez Restrepo  <br/>Doc. Identidad: 52.890.123</p>
+<p class="legal-paragraph"><strong class="legal-bold">EL ARRENDATARIO:</strong>  <br/>Nombre: Andres Felipe Valencia Castro  <br/>Doc. Identidad: 1.018.456.789</p>
+        </div>
+
+        <!-- Bloque de Firmas -->
+        <div class="seccion-firmas-bloque">
+            <div class="firmas-titulo-principal">Constancia y Otorgamiento de Firmas Electrónicas</div>
+            <div class="firmas-grid-container">
+                
+        <div class="firma-card">
+            <div class="firma-header-tag">PARTE 1 • PARTE_EMISORA</div>
+            <div class="firma-canvas-box">
+                <div class="firma-digital-badge"><span>✍️</span> FIRMA ELECTRÓNICA VERIFICADA</div>
+            </div>
+            <div class="firma-divider"></div>
+            <div class="firma-data">
+                <div class="firma-nombre-titular">Maria Fernanda Gomez Restrepo</div>
+                <div class="firma-identificacion"><strong>CC:</strong> 52.890.123</div>
+                <div class="firma-metadata-row">
+                    <span><strong>IP Origen:</strong> 127.0.0.1</span>
+                    <span><strong>Estampa UTC:</strong> 2/10/2026, 2:48:54 p. m.</span>
+                </div>
+                <div class="firma-metadata-row" style="margin-top:4px; color:#065f46; background:#ecfdf5; border:1px solid #a7f3d0; padding:4px 8px; border-radius:6px; font-size:7.5pt; display:flex; justify-content:space-between;">
+                    <span>✅ <strong>2FA WhatsApp:</strong> +57 312 890 4567</span>
+                    <span><strong>Auth:</strong> WA-AUTH-CERT</span>
+                </div>
+                <div class="firma-hash-stamp">
+                    <span>🛡️ Huella Digital: 5040bf506f779bd5fbe57d60c1d8...</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="firma-card">
+            <div class="firma-header-tag">PARTE 2 • PARTE_RECEPTORA</div>
+            <div class="firma-canvas-box">
+                <img src="data:image/png;base64,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" alt="Firma Digital" class="firma-trazo-img" />
+            </div>
+            <div class="firma-divider"></div>
+            <div class="firma-data">
+                <div class="firma-nombre-titular">Andres Felipe Valencia Castro</div>
+                <div class="firma-identificacion"><strong>CC:</strong> 1.018.456.789</div>
+                <div class="firma-metadata-row">
+                    <span><strong>IP Origen:</strong> 127.0.0.1</span>
+                    <span><strong>Estampa UTC:</strong> 2/10/2026, 2:48:54 p. m.</span>
+                </div>
+                <div class="firma-metadata-row" style="margin-top:4px; color:#065f46; background:#ecfdf5; border:1px solid #a7f3d0; padding:4px 8px; border-radius:6px; font-size:7.5pt; display:flex; justify-content:space-between;">
+                    <span>✅ <strong>2FA WhatsApp:</strong> +57 3106139217</span>
+                    <span><strong>Auth:</strong> WA-AUTH-9DA14A</span>
+                </div>
+                <div class="firma-hash-stamp">
+                    <span>🛡️ Huella Digital: 5040bf506f779bd5fbe57d60c1d8...</span>
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- Pie de Criptografía y QR -->
+        <div class="footer-cripto-box">
+            <div class="footer-cripto-info">
+                <div class="footer-cripto-title">
+                    <span>🔒 Matriz de Evidencia Digital & No Repudio Probatorio</span>
+                </div>
+                <div class="footer-cripto-desc">
+                    Mensaje de datos emitido conforme a la <strong>Ley 527 de 1999</strong> y <strong>Decreto 2364 de 2012</strong> de la República de Colombia. El presente documento presta <strong>Mérito Ejecutivo</strong> (Art. 422 del C.G.P.).
+                </div>
+                <div class="hash-sha256-display">
+                    HASH SHA-256: 5040bf506f779bd5fbe57d60c1d8a1d4a7543d221b8a183c765579096e1d08c9
+                </div>
+                <div class="footer-meta-line">
+                    <span>UUID Público: <strong style="font-family:monospace; color:#2563eb;">5ba86b32-19e3-4928-848d-4f39d8af57d8</strong></span>
+                    <span>Emisión: viernes, 2 de octubre de 2026, 2:48:54 p. m.</span>
+                </div>
+            </div>
+            <div class="footer-qr-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" width="115" height="115" style="background:#ffffff; border-radius:6px; padding:2px;">
+        <rect width="100%" height="100%" fill="#ffffff" />
+        <rect x="5.61" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="5.61" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="8.41" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="11.22" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="14.02" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="16.83" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="19.63" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="22.44" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="25.24" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="28.05" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="30.85" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="33.66" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="36.46" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="39.27" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="42.07" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="44.88" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="47.68" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="50.49" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="53.29" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="56.10" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="58.90" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="61.71" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="64.51" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="67.32" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="70.12" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="72.93" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="25.24" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="75.73" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="78.54" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="81.34" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="84.15" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="86.95" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="89.76" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="53.29" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="92.56" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="95.37" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="70.12" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="98.17" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="50.49" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="64.51" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="75.73" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="100.98" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="103.78" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="100.98" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="33.66" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="42.07" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="44.88" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="58.90" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="67.32" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="72.93" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="86.95" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="92.56" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="95.37" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="103.78" width="2.85" height="2.85" fill="#0F172A" /><rect x="5.61" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="8.41" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="11.22" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="14.02" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="16.83" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="19.63" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="22.44" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="28.05" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="30.85" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="36.46" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="39.27" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="47.68" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="56.10" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="61.71" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="78.54" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="81.34" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="84.15" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="89.76" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="98.17" y="106.59" width="2.85" height="2.85" fill="#0F172A" /><rect x="106.59" y="106.59" width="2.85" height="2.85" fill="#0F172A" />
+    </svg>
+                <div class="footer-qr-caption">Escanear para cotejo oficial</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

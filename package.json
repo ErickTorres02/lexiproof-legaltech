@@ -1,0 +1,13 @@
+﻿{
+  "name": "lexiproof-legaltech",
+  "version": "1.0.0",
+  "description": "Plataforma SaaS B2B LegalTech de redacción de contratos por IA, certificación criptográfica inmutable SHA-256 y verificación pública por QR bajo Ley 527 de 1999",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "keywords": ["legaltech", "smart-contracts", "gemini-ai", "cryptography", "sha256", "ley-527", "colombia"],
+  "author": "LexiProof Engineering",
+  "license": "MIT"
+}

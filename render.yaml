@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: lexiproof-legaltech
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: ""
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000

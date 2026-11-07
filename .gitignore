@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+
+# Entorno y Secretos
+.env
+*.local
+
+# Logs y Temporales
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Generados
+public/generated_pdfs/contrato_*
+
