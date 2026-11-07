@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+const http = require('http');
 const db = require('../../database/db');
 const { enviarNotificacionEmail } = require('../services/email_dispatch_service');
 
@@ -48,8 +50,28 @@ class LegalSentinelWatcher {
         // Ejecutar primer chequeo a los 5 segundos del arranque
         setTimeout(() => this.runAudit(), 5000);
 
-        // Ciclo continuo
+        // Ciclo continuo de auditoría cada 60s
         this.timer = setInterval(() => this.runAudit(), this.intervalMs);
+
+        // Auto-Ping anti-suspensión cada 10 minutos (Render Keep-Alive 24/7)
+        setTimeout(() => this.triggerKeepAlive(), 30000);
+        this.keepAliveTimer = setInterval(() => this.triggerKeepAlive(), 10 * 60 * 1000);
+    }
+
+    triggerKeepAlive() {
+        const renderHost = process.env.RENDER_EXTERNAL_HOSTNAME || 
+                           (process.env.PUBLIC_URL ? process.env.PUBLIC_URL.replace(/^https?:\/\//, '') : null);
+        
+        if (!renderHost || renderHost.includes('localhost') || renderHost.includes('127.0.0.1')) {
+            return;
+        }
+
+        const pingUrl = `https://${renderHost}/api/dashboard/stats`;
+        https.get(pingUrl, (res) => {
+            console.log(`[SENTINEL KEEP-ALIVE] ⚡ Ping anti-suspensión Render exitoso (${res.statusCode}) — Instancia 24/7 activa.`);
+        }).on('error', (e) => {
+            console.warn('[SENTINEL KEEP-ALIVE] Nota ping:', e.message);
+        });
     }
 
     stop() {
